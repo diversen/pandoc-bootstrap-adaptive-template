@@ -212,7 +212,7 @@ body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 20px;
   color: #333333;
   background-color: #ffffff;
 }
@@ -621,11 +621,11 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 8px 0;
+  margin: 10px 0;
   font-family: inherit;
   font-weight: bold;
   line-height: 20px;
-  color: #0088cc;
+  color: inherit;
   text-rendering: optimizelegibility;
 }
 h1 small,
@@ -641,16 +641,16 @@ h6 small {
 h1,
 h2,
 h3 {
-  line-height: 14px;
+  line-height: 40px;
 }
 h1 {
-  font-size: 24px;
+  font-size: 38.5px;
 }
 h2 {
-  font-size: 18px;
+  font-size: 31.5px;
 }
 h3 {
-  font-size: 14px;
+  font-size: 24.5px;
 }
 h4 {
   font-size: 17.5px;
@@ -690,7 +690,7 @@ ol ul {
   margin-bottom: 0;
 }
 li {
-  line-height: 16px;
+  line-height: 20px;
 }
 ul.unstyled,
 ol.unstyled {
@@ -3049,3 +3049,5 @@ h4:hover a { color: #333; } h5:hover a { color: #333; } h6:hover a { color: #333
 .toc ul > li > a:focus { text-decoration: none; background-color: #eeeeee; }
 .toc ul { margin-bottom: 0; padding-left: 5px;padding-right: 5px;}
 .toc ul > li > a, .toc ul > li > a { padding: 3px 15px; }
+
+table {min-width: 100%}
