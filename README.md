@@ -1,0 +1,1 @@
+# pandoc-bootstrap-adaptive-template
