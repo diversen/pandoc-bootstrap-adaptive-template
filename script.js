@@ -1,3 +1,13 @@
+MathJax.Hub.Config({
+                tex2jax: {
+                    preview: "none",
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    processEscapes: true
+                },
+                messageStyle: "none"
+                
+            });
+
 function setStickyMenu() {
     var width = $(window).width();
     //console.log(width);
