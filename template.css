@@ -3082,18 +3082,20 @@ table {min-width: 100%}
   background: rgba(0, 0, 0, 0.5);
 }
 
+
 .dcjq-parent.active {
     background-color: #ccc;
 }
 
+/*
 .dcjq-parent.active:hover {
     background-color: #ccc;
-}
+}*/
 
-
+/*
 .dcjq-parent:hover {
     background-color: #ccc;
-}
+}*/
 /*
 li a.active {
    background-color: #ccc; 

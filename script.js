@@ -1,59 +1,46 @@
 MathJax.Hub.Config({
-                tex2jax: {
-                    preview: "none",
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    processEscapes: true
-                },
-                messageStyle: "none"
-                
-            });
+    tex2jax: {
+        preview: "none",
+        inlineMath: [['$', '$'], ["\\(", "\\)"]],
+        processEscapes: true
+    },
+    messageStyle: "none"
+
+});
 
 
 
-var setStickyMenu = function() {
-    var width = $(window).width();
-    
+function setStickyMenu () {
+     
     var options = {
         bottoming: false,
         inner_scrolling: false
     };
     
     var sticky = "#TOC";
+    var width = $(window).width();
+    
     if (width >= 768) {
+        console.log('fold in');
         $(sticky).hide();
         $(sticky).show();
         $(sticky).stick_in_parent(options);
         $(".well ul").addClass('menu');
-        $(".menu").attr('id', 'accordion-1');
+
     } else {
-        $(sticky).hide();
-        $(sticky).show();
+        $(".well ul").removeClass('menu');
         $(sticky).trigger("sticky_kit:detach");
-        $(".menu").removeAttr('id');
-        $(".well ul").removeClass();
+        console.log('fold out');
+
+        
     }
-}
+};
 
 
-$(document).ready(function () {
-    setStickyMenu();
-    doAccordion();
-});
 
-function timeout() {
-    setTimeout(function () {
-        setStickyMenu();
-        timeout();
-    }, 100);
-}
+function doAccordion () {
 
-$(document).ready(function () {
-    $( 'table' ).addClass( "table" )
-});
-
-
-var doAccordion = function () {
-    $('#accordion-1').dcAccordion({
+    $(".menu").dcAccordion({
         eventType: 'click',
         autoClose: false,
         saveState: true,
@@ -66,54 +53,35 @@ var doAccordion = function () {
     });
 }
 
-$(window).resize(function(){
 
+$(document).ready(function () {
+    setStickyMenu();
+    doAccordion();
+});
+
+$(document).ready(function () {
+    $( 'table' ).addClass( "table" );
 });
 
 /*
- 
-					$('#accordion-2').dcAccordion({
-						eventType: 'click',
-						autoClose: false,
-						saveState: true,
-						disableLink: true,
-						speed: 'fast',
-						classActive: 'test',
-						showCount: true
-					});
-					$('#accordion-3').dcAccordion({
-						eventType: 'click',
-						autoClose: false,
-						saveState: false,
-						disableLink: false,
-						showCount: false,
-						speed: 'slow'
-					});
-					$('#accordion-4').dcAccordion({
-						eventType: 'hover',
-						autoClose: true,
-						saveState: true,
-						disableLink: true,
-						menuClose: false,
-						speed: 'slow',
-						showCount: true
-					});
-					$('#accordion-5').dcAccordion({
-						eventType: 'hover',
-						autoClose: false,
-						saveState: true,
-						disableLink: true,
-						menuClose: true,
-						speed: 'fast',
-						showCount: true
-					});
-					$('#accordian-6').dcAccordion({
-						eventType: 'hover',
-						autoClose: false,
-						saveState: false,
-						disableLink: false,
-						showCount: false,
-						menuClose: true,
-						speed: 'slow'
-					});
- */
+
+$(window).resize(function(){
+    var width = $(window).width();
+    
+    setStickyMenu();
+    //window.location.href += location.hash;
+    //location.reload();
+});*/
+
+$(window).resize(function() {
+    if(this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function() {
+        $(this).trigger('resizeEnd');
+    }, 1000);
+});
+
+$(window).bind('resizeEnd', function() {
+    //do something, window hasn't changed size in 500ms
+    window.location = location.pathname + location.hash;
+    location.reload();
+});
