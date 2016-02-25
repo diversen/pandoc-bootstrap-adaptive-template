@@ -9,7 +9,6 @@ MathJax.Hub.Config({
 });
 
 
-
 function setStickyMenu () {
      
     var options = {
@@ -31,7 +30,6 @@ function setStickyMenu () {
         $(".well ul").removeClass('menu');
         $(sticky).trigger("sticky_kit:detach");
         console.log('fold out');
-
         
     }
 };
@@ -45,14 +43,13 @@ function doAccordion () {
         autoClose: false,
         saveState: true,
         disableLink: false,
-        speed: 'slow',
+        speed: 'fast',
         showCount: true,
         autoExpand: true,
         cookie: 'dcjq-accordion-1',
         classExpand: 'dcjq-current-parent'
     });
 }
-
 
 $(document).ready(function () {
     setStickyMenu();
@@ -63,21 +60,11 @@ $(document).ready(function () {
     $( 'table' ).addClass( "table" );
 });
 
-/*
-
-$(window).resize(function(){
-    var width = $(window).width();
-    
-    setStickyMenu();
-    //window.location.href += location.hash;
-    //location.reload();
-});*/
-
 $(window).resize(function() {
     if(this.resizeTO) clearTimeout(this.resizeTO);
     this.resizeTO = setTimeout(function() {
         $(this).trigger('resizeEnd');
-    }, 1000);
+    }, 200);
 });
 
 $(window).bind('resizeEnd', function() {
