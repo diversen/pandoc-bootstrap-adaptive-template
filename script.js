@@ -10,7 +10,7 @@ MathJax.Hub.Config({
 
 function setStickyMenu() {
     var width = $(window).width();
-    //console.log(width);
+
     var sticky = "#TOC";
     if (width >= 768) {
         $(sticky).hide();
@@ -26,62 +26,15 @@ function setStickyMenu() {
         $(".well ul").removeClass();
     }
 }
-/*
-function setStickyMenu() {
-    var width = $(window).width();
-    //console.log(width);
-    if (width >= 768) {
-        $("#TOC").hide();
-        $("#TOC").show();
-        $("#TOC").stick_in_parent();
-        $(".well ul").addClass('menu');
-        $(".menu").attr('id', 'accordion-1');
-    } else {
-        $("#TOC").hide();
-        $("#TOC").show();
-        $("#TOC").trigger("sticky_kit:detach");
-        $(".menu").removeAttr('id');
-        $(".well ul").removeClass();
-    }
-}*/
 
 
-$(document).ready(function ($) {
+$(document).ready(function () {
     setStickyMenu();
 });
 
 $(document).ready(function () {
     $( 'table' ).addClass( "table" )
 });
-
-/*
-$(document).ready(function () {
-    $( ".active" ).on( "click", function() {
-        //alert('ok');
-        $( '.active' ).removeClass( "active");
-    });
-}); */
-
-/*
-var addEvent = function(object, type, callback) {
-    if (object == null || typeof(object) == 'undefined') return;
-    if (object.addEventListener) {
-        object.addEventListener(type, callback, false);
-    } else if (object.attachEvent) {
-        object.attachEvent("on" + type, callback);
-    } else {
-        object["on"+type] = callback;
-    }
-}; */
-/*
-var testFunc = function () {
-    alert('loaded');
-};*/
-
-// addEvent(window, "load", setStickyMenu);
-
-
-
 
 function timeout() {
     setTimeout(function () {
