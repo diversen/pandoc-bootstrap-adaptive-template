@@ -14,7 +14,7 @@ Start a server in current directory, e.g.:
 
     php -S localhost:8080
 
-Point a browser to http://localhost:8080
+Point a browser to [http://localhost:8080](http://localhost:8080)
 
 Or checout the gh-page for this repository, which is the pandoc documentation with this template: 
 
