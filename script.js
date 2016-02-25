@@ -8,14 +8,21 @@ MathJax.Hub.Config({
                 
             });
 
-function setStickyMenu() {
-    var width = $(window).width();
 
+
+var setStickyMenu = function() {
+    var width = $(window).width();
+    
+    var options = {
+        bottoming: false,
+        inner_scrolling: false
+    };
+    
     var sticky = "#TOC";
     if (width >= 768) {
         $(sticky).hide();
         $(sticky).show();
-        $(sticky).stick_in_parent();
+        $(sticky).stick_in_parent(options);
         $(".well ul").addClass('menu');
         $(".menu").attr('id', 'accordion-1');
     } else {
@@ -30,50 +37,41 @@ function setStickyMenu() {
 
 $(document).ready(function () {
     setStickyMenu();
+    doAccordion();
 });
+
+function timeout() {
+    setTimeout(function () {
+        setStickyMenu();
+        timeout();
+    }, 100);
+}
 
 $(document).ready(function () {
     $( 'table' ).addClass( "table" )
 });
 
-function timeout() {
-    setTimeout(function () {
-        setStickyMenu({
-            bottoming: true,
-            inner_scrolling: false
-        });
-        timeout();
-    }, 1000);
+
+var doAccordion = function () {
+    $('#accordion-1').dcAccordion({
+        eventType: 'click',
+        autoClose: false,
+        saveState: true,
+        disableLink: false,
+        speed: 'slow',
+        showCount: true,
+        autoExpand: true,
+        cookie: 'dcjq-accordion-1',
+        classExpand: 'dcjq-current-parent'
+    });
 }
 
-$(document).ready(function(){
-    timeout();
+$(window).resize(function(){
+
 });
 
 /*
-$(document).ready(function ($) {
-    $("#TOC").stick_in_parent();
-    $(".well ul").addClass('menu');
-    $(".menu").attr('id', 'accordion-1');
-}); */
-
-// $(document).ready(function($){
-//});
-
-
-
-$(document).ready(function($){
-					$('#accordion-1').dcAccordion({
-						eventType: 'click',
-						autoClose: false,
-						saveState: true,
-						disableLink: false,
-						speed: 'slow',
-						showCount: true,
-						autoExpand: true,
-						cookie	: 'dcjq-accordion-1',
-						classExpand	 : 'dcjq-current-parent'
-					});
+ 
 					$('#accordion-2').dcAccordion({
 						eventType: 'click',
 						autoClose: false,
@@ -118,4 +116,4 @@ $(document).ready(function($){
 						menuClose: true,
 						speed: 'slow'
 					});
-});
+ */
