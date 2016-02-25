@@ -55,6 +55,14 @@ $(document).ready(function () {
 });
 
 /*
+$(document).ready(function () {
+    $( ".active" ).on( "click", function() {
+        //alert('ok');
+        $( '.active' ).removeClass( "active");
+    });
+}); */
+
+/*
 var addEvent = function(object, type, callback) {
     if (object == null || typeof(object) == 'undefined') return;
     if (object.addEventListener) {
@@ -108,7 +116,7 @@ $(document).ready(function($){
 						saveState: true,
 						disableLink: false,
 						speed: 'slow',
-						showCount: false,
+						showCount: true,
 						autoExpand: true,
 						cookie	: 'dcjq-accordion-1',
 						classExpand	 : 'dcjq-current-parent'
