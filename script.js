@@ -21,9 +21,11 @@ function setStickyMenu () {
     
     if (width >= 768) {
         console.log('fold in');
-        $(sticky).hide();
-        $(sticky).show();
+        //$(sticky).hide();
+        //$(sticky).show();
         $(sticky).stick_in_parent(options);
+        // $(".well ul").addClass('menu');
+        
         $(".well ul").addClass('menu');
 
     } else {
@@ -41,9 +43,9 @@ function doAccordion () {
     $(".menu").dcAccordion({
         eventType: 'click',
         autoClose: false,
-        saveState: true,
+        saveState: false,
         disableLink: false,
-        speed: 'fast',
+        speed: 'slow',
         showCount: true,
         autoExpand: true,
         cookie: 'dcjq-accordion-1',
