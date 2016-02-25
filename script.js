@@ -36,8 +36,12 @@ function setStickyMenu () {
     }
 };
 
+$(document).ready(function () {
+    $(window).on('resize', function () {
 
-
+        setStickyMenu();
+    });
+});
 function doAccordion () {
 
     $(".menu").dcAccordion({
@@ -45,7 +49,7 @@ function doAccordion () {
         autoClose: false,
         saveState: false,
         disableLink: false,
-        speed: 'slow',
+        speed: 0,
         showCount: true,
         autoExpand: true,
         cookie: 'dcjq-accordion-1',
@@ -62,6 +66,7 @@ $(document).ready(function () {
     $( 'table' ).addClass( "table" );
 });
 
+/*
 $(window).resize(function() {
     if(this.resizeTO) clearTimeout(this.resizeTO);
     this.resizeTO = setTimeout(function() {
@@ -71,6 +76,7 @@ $(window).resize(function() {
 
 $(window).bind('resizeEnd', function() {
     //do something, window hasn't changed size in 500ms
-    window.location = location.pathname + location.hash;
-    location.reload();
-});
+    //window.location = location.pathname + location.hash;
+    //location.reload();
+    setStickyMenu();
+});*/
