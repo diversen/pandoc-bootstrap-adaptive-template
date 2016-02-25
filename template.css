@@ -3050,6 +3050,14 @@ h4:hover a { color: #333; } h5:hover a { color: #333; } h6:hover a { color: #333
 .toc ul { margin-bottom: 0; padding-left: 5px;padding-right: 5px;}
 .toc ul > li > a, .toc ul > li > a { padding: 3px 15px; }
 
+#TOC {
+
+    
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+}
+
 table {min-width: 100%}
 .video-js {
     min-width:100%; 
@@ -3057,3 +3065,19 @@ table {min-width: 100%}
 
 }
 .vjs-fullscreen {padding-top: 0px}
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
+}

@@ -1,6 +1,6 @@
 # pandoc bootstrap adaptive template
 
-Copied from: (Would not be much worth as a fork): 
+Copied from: 
 
 [https://github.com/tonyblundell/pandoc-bootstrap-template](https://github.com/tonyblundell/pandoc-bootstrap-template)
 
@@ -16,3 +16,6 @@ Start a server in current directory, e.g.:
 
 Point a browser to http://localhost:8080
 
+Or checout the gh-page for this repository, which is the pandoc documentation with this template: 
+
+[http://diversen.github.io/pandoc-bootstrap-adaptive-template/](http://diversen.github.io/pandoc-bootstrap-adaptive-template/)

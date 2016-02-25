@@ -11,6 +11,25 @@ MathJax.Hub.Config({
 function setStickyMenu() {
     var width = $(window).width();
     //console.log(width);
+    var sticky = "#TOC";
+    if (width >= 768) {
+        $(sticky).hide();
+        $(sticky).show();
+        $(sticky).stick_in_parent();
+        $(".well ul").addClass('menu');
+        $(".menu").attr('id', 'accordion-1');
+    } else {
+        $(sticky).hide();
+        $(sticky).show();
+        $(sticky).trigger("sticky_kit:detach");
+        $(".menu").removeAttr('id');
+        $(".well ul").removeClass();
+    }
+}
+/*
+function setStickyMenu() {
+    var width = $(window).width();
+    //console.log(width);
     if (width >= 768) {
         $("#TOC").hide();
         $("#TOC").show();
@@ -24,7 +43,7 @@ function setStickyMenu() {
         $(".menu").removeAttr('id');
         $(".well ul").removeClass();
     }
-}
+}*/
 
 
 $(document).ready(function ($) {
@@ -58,12 +77,15 @@ var testFunc = function () {
 
 function timeout() {
     setTimeout(function () {
-        setStickyMenu()
+        setStickyMenu({
+            bottoming: true,
+            inner_scrolling: false
+        });
         timeout();
     }, 1000);
 }
 
-$(document).ready(function($){
+$(document).ready(function(){
     timeout();
 });
 
@@ -82,7 +104,7 @@ $(document).ready(function ($) {
 $(document).ready(function($){
 					$('#accordion-1').dcAccordion({
 						eventType: 'click',
-						autoClose: true,
+						autoClose: false,
 						saveState: true,
 						disableLink: false,
 						speed: 'slow',
