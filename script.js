@@ -26,10 +26,10 @@ function setStickyMenu () {
         $(sticky).stick_in_parent(options);
         // $(".well ul").addClass('menu');
         
-        $(".well ul").addClass('menu');
+        $(".well ul").attr('id', 'accordion-1');
 
     } else {
-        $(".well ul").removeClass('menu');
+        $(".well ul").attr('id', '');
         $(sticky).trigger("sticky_kit:detach");
         console.log('fold out');
         
@@ -44,7 +44,7 @@ $(document).ready(function () {
 });
 function doAccordion () {
 
-    $(".menu").dcAccordion({
+    $("#accordion-1").dcAccordion({
         eventType: 'click',
         autoClose: false,
         saveState: false,
