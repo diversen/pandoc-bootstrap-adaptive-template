@@ -6,6 +6,12 @@ Copied from:
 
 Includes a sticky adaptive menu and some other nice things:
 
+Install: 
+
+    git clone https://github.com/diversen/pandoc-bootstrap-adaptive-template
+
+    cd pandoc-bootstrap-adaptive-template
+
 Example (fetch latest pandoc README and transform to HTML)
 
     pandoc https://raw.githubusercontent.com/jgm/pandoc/master/README -o index.html -f markdown --template standalone.html --css template.css --toc --toc-depth=6
